@@ -85,7 +85,11 @@ Pour mettre à jour NPM, ouvrez un terminal PowerShell (admin) et entrez:
 	npm update
 	npm start
 
-3- Ouvrez un navigateur web pour accéder au portail
+3- Ouvrez 'index.html' situé dans le dossier 'Frontend'
+
+Pour valider que le backend est en cours d'execution, entrer dans un navigateur web:
+
+	http://127.0.0.1:8000/
 
 
 # LICENCE
