@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>STM - Equipe 01 </title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="style/style.css">
+   <script src="js/initApplication.js"></script>
+   <script src="json/lines.json.js"></script>
+   <script src="json/stops.json.js"></script>
+   <script src="json/arrivals.json.js"></script>
+   <script src="js/linesCreator.js"></script>
+   <script src="js/displayLines.js"></script>
+   <script src="js/stopsCreator.js"></script>
+   <script src="js/arrivalsCreator.js"></script>
+</head>
+
+<!-- Entete de la page -->
+<header class="entete">
+   <img class="logo" src="style/img/Header_Logo.png">
+   <img class="banner" src="style/img/Header_Baniere.png">
+</header>
+
+<body>
+   <div class="content">
+
+      <!-- Menu gauche (lignes / catégories) -->
+      <div class="menuContent">
+         <ul id="allLines" class="category">
+            <li>
+               <span class="caret" onclick="manageToggle('all')">Toutes les lignes</span>
+               <ul id="all" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="localLines" class="category">
+            <li>
+               <span class="caret" onclick="manageToggle('local')" href="#">Reseau local</span>
+               <ul id="local" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="nightLines" class="category">
+            <li>
+               <span class="caret" onclick="manageToggle('night')" href="#">Reseau de nuit</span>
+               <ul id="night" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="expressLines" class="category">
+            <li>
+               <span class="caret" onclick="manageToggle('express')" href="#">Reseau express</span>
+               <ul id="express" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="dedicatedLines" class="category">
+            <li>
+               <span class="caret" onclick="manageToggle('dedicated')" href="#">Navettes</span>
+               <ul id="dedicated" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="shuttleOrLines" class="category">
+            <li>
+               <span class="caret" onclick="manageToggle('shuttleOr')" href="#">Navettes Or</span>
+               <ul id="shuttleOr" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+      </div>
+      <br />
+
+      <!-- Tableau Stops -->
+      <div id="tableContent">
+         <span id="lineTitle">Veuillez choisir une ligne d'autobus</span>
+         <div id="stopsContent">
+            <table id="stops" class="scroll">
+               <thead>
+                  <tr>
+                     <th class="column">Arret</th>
+                     <th class="column">Code</th>
+                     <th class="column">Arrivées</th>
+                     <th class="column">Favoris</th>
+                  </tr>
+               </thead>
+               <tbody></tbody>
+            </table>
+         </div>
+
+         <!-- Tableau Arrivées -->
+         <div id="arrivalsContent">
+            <table id="arrivals" class="scroll">
+               <thead>
+                  <tr>
+                     <th id="lastUpdate">Veuillez choisir l'arret d'une ligne d'autobus</th>
+                  </tr>
+               </thead>
+               <tbody></tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</body>
+
+<!-- Pied de la page (contact) -->
+<footer>
+   <div id="foot">
+      <br />
+      <div class="contact">EQUIPE 01 </div>
+      <br />
+      <div class="contact">Alexandre Laroche, alexandre.laroche.1@ens.etsmtl.ca</div>
+      <div class="contact">Jean-Michel, jean-michel.lafrance.1@ens.etsmtl.ca</div>
+      <div class="contact">Khoi Tran-Quang, hoang-khoi-stephane.tran-quang.1@ens.etsmtl.ca</div>
+      <div class="contact">Paula Sanchez, paula-ximena.sanchez-sabogal.1@ens.etsmtl.ca</div>
+   </div>
+</footer>
+
+</html>
+
+<script src="json/lines.json.js"></script>
+<script src="json/stops.json.js"></script>
+<script src="json/arrivals.json.js"></script>
+<script src="js/initApplication.js"></script>
+<script src="js/linesCreator.js"></script>
+<script src="js/displayLines.js"></script>
+<script src="js/stopsCreator.js"></script>
+<script src="js/arrivalsCreator.js"></script>

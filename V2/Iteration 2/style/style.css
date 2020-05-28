@@ -1,0 +1,324 @@
+/*************************** 
+ *      PAGE - WINDOW      *
+ ***************************/
+
+html {
+  width: 1000px;
+}
+
+/*************************** 
+ *          HEADER         *
+ ***************************/
+
+img#logo {
+  width: 130px;
+  height: 130px;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
+img#banniere {
+  width: 80%;
+  height: 80%;
+  padding-top: 20px;
+  float: right;
+}
+
+header#entete {
+  height: 150px;
+  border: 5px solid rgb(0, 120, 170);
+}
+
+/*************************** 
+ *           BODY          *
+ ***************************/
+
+body {
+  border: 5px solid rgb(150, 150, 150);
+}
+
+/*************************** 
+ *        BODY - MENU      *
+ ***************************/
+
+/* Boite gauche qui regroupe les boutons (categories lignes) */
+ul#lignes {
+  float: left;
+  width: 280px;
+  height: 605px;                         
+  padding-left: 8px;
+  padding-right: 10px;
+  overflow-y: auto;
+  background-color: lightgray;
+  margin-top: 0;
+}
+
+/* Espace entre chaque bouton (categories lignes) */
+ul#lignes li {
+  border-bottom: 5px solid lightgray;
+  padding: 5px;
+}
+
+/* Style des boutons (categories lignes) */
+ul#lignes-local {
+  background-color: rgb(150, 150, 150);
+  padding: 0px;
+  list-style: none;
+  margin: 0,0, 16px;
+}
+
+/* Style du triangle (puce) et des categories de lignes */
+.caret {
+  width: 100%;
+  color: white;
+  user-select: none;
+  list-style-type: none;
+  -webkit-user-select: none;  /* Safari 3.1+ */
+  -moz-user-select: none;  /* Firefox 2+ */
+  -ms-user-select: none;   /* IE 10+ */
+
+  /* Style text */
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+/* Style du triangle (puce) fermé */
+.caret::before {
+  content: "\25B6";
+  color: white;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Style du triangle (puce) ouvert */
+.caret-down::before {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */
+  color: rgb(0, 120, 170);
+}
+
+/* Pour Pour garder a gauche les lignes */
+.nested {
+  padding: 0px;
+  display: none;
+}
+
+/* Style des lignes */
+.nested li {
+  list-style-type: none;
+  border-bottom: 2px solid white;
+  background-color: rgb(0, 120, 170);
+  /* Style text */
+  text-align: left;
+  font-size: 12px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Pour que les lignes puissent prendre toute la place */
+.nested ul {
+  padding: 0px;
+}
+
+li.active {
+  display: block;
+}
+
+/*************************** 
+ *      BODY - ONGLETS     *
+ ***************************/
+
+ /* Onglets (Horaires et Carte) */
+ .onglets {
+  width: 650px;
+  display: inline-block;
+}
+
+/* Affiche les onglets au-dessus du contenu */
+.ongletsRef:after { 
+	clear:both;
+  content:'';
+  display:block;
+  outline-style: solid;
+  /* Style ligne separatrice entre contenu et onglets */
+  outline-color: rgb(0, 120, 170); 
+}
+
+/* Positionnement des onglets */
+.ongletsRef li {
+  float:left;
+	margin:0px 10px;
+	list-style:none;
+}
+
+/* Style des onglets */
+.ongletsRef a {
+  background:rgb(0, 160, 210); 
+	padding:10px 20px;
+  display:inline-block;
+  text-decoration: none;
+  transition:all linear 0.16s;
+  border-radius:3px 3px 0px 0px;
+
+  /* Style du texte dans les onglets */
+  font-size:16px;
+	font-weight:600;
+  color:#fff;
+}
+
+/* Style de l'onglet actif */
+li.active a, li.active a {
+	background:rgb(0, 120, 170); 
+  color:#fff;
+}
+
+/* Style de la fenetre attaché aux onglets */
+.tab-content {
+  background:#fff;
+}
+
+/* Cache le contenu de l'onglet non actif */
+.onglet {
+  display:none;
+}
+
+/* Affiche le contrnu de l'onglet actif */
+.tab.active {
+	display:block;
+}
+
+/* Info ligne autobus affichée à côté des onglets */
+#info-ligne{
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(0, 120, 170); 
+}
+
+/*************************** 
+ *      BODY - Tableau     *
+ ***************************/
+
+/* Contenu du stop */
+#stopsContent {
+  height: 252px;        
+  width: 666px;                          
+  overflow-y: auto;     
+  border: 5px solid rgb(0, 160, 210);
+}
+
+/* Contenu des arrivees */
+#arrivalsContent {
+  height: 245px;     
+  width: 666px;                 
+  overflow-y: auto;     
+  border: 5px solid rgb(0, 160, 210);
+}
+
+/* Ligne affichee au dessus du tableau */
+#arrivalsContent > span {
+  display: inline-block;
+  font-weight: bold;
+  color: rgb(0, 120, 170);
+}
+
+/* Style du tableau */
+table { 
+  width: 100%;
+  height: 100px;
+  max-width: 666px;
+  border: 2px solid #9ea7af;
+  border-collapse: collapse;
+}
+
+/* Style des titres des colonnes du tableau */
+th {
+  color: white;
+  background: rgb(0, 120, 170);
+  font-size: 16px;
+  padding: 8px;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid white;
+}
+
+/* Style du seperateur entre les lignes du tableau */
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color: black;
+}
+
+/* Style ligne grise */
+tr:nth-child(odd) td {
+  background: lightgray;
+}
+
+/* Style du hover (ligne blanche) */
+tr:hover td {
+  background: rgb(0, 160, 210);
+  color: white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
+/* Style du hover (ligne grise) */
+tr:nth-child(odd):hover td {
+  background: rgb(0, 160, 210);
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
+/* Style des lignes et separateurs du tableau */
+#arretTableMap td {
+  padding: 0px;
+}
+
+/* Style des lignes et separateurs du tableau */
+td {
+  padding: 10px;
+  text-align: left;
+  font-weight: 300;
+  font-size: 14px;
+  vertical-align: middle;
+  border-right: 1px solid rgb(0, 120, 170);
+}
+
+/*************************** 
+ *      UPCOMING ARRET     *
+ ***************************/
+ 
+ #upcomingArret {
+	color : red; 
+ }
+ 
+/*************************** 
+ *          CARTE          *
+ ***************************/
+
+ .carte { 
+  width: 600px;
+  height: 512px;
+  margin-left: 40px;
+}
+
+/*************************** 
+ *          FOOTER         *
+ ***************************/
+
+footer {
+  background-color: rgb(150, 150, 150);
+  text-align: left;
+  height: 140px;
+  color: white;
+}
+
+div.contact {
+  color: white;
+  font-size: 15px;
+  padding-left: 10px;
+  font-family: Arial, sans-serif;
+}

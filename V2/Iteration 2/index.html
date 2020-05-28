@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>STM - Equipe 01 </title>
+   <meta charset="utf-8">
+   <!-- CSS - Style -->
+   <link rel="stylesheet" href="style/style.css">
+   <!-- Ajax JQuery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+   <!-- Leaflet -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin="" />
+   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+   <!-- JavaScript features -->
+   <script src="js/config.js"></script>
+   <script src="js/busHandler.js"></script>
+   <script src="js/mapHandler.js"></script>
+   <script src="js/linesHandler.js"></script>
+   <script src="js/initApplication.js"></script>
+   <script src="js/displayHandler.js"></script>
+   <script src="js/stopsHandler.js"></script>
+   <script src="js/arrivalsHandler.js"></script>
+   <script src="js/refreshHandler.js"></script>
+   <link rel="shortcut icon" href="">
+</head>
+
+<!-- Entete de la page -->
+<header id="entete">
+   <img id="logo" src="style/img/Header_Logo.png">
+   <img id="banniere" src="style/img/Header_Baniere.png">
+</header>
+
+<body>
+   <div id="contenu">
+
+      <!-- Menu gauche (lignes / catégories) -->
+      <ul id="lignes">
+		<li>
+         <ul id="lignes-local" class="allLines">
+            <li>
+               <span class="caret" onclick="manageToggle('all')">Toutes les lignes</span>
+               <ul id="all" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="lignes-local" class="localLines">
+            <li>
+               <span class="caret" onclick="manageToggle('local')" href="#">Reseau local</span>
+               <ul id="local" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="lignes-local" class="nightLines">
+            <li>
+               <span class="caret" onclick="manageToggle('night')" href="#">Reseau de nuit</span>
+               <ul id="night" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="lignes-local" class="expressLines">
+            <li>
+               <span class="caret" onclick="manageToggle('express')" href="#">Reseau express</span>
+               <ul id="express" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="lignes-local" class="dedicatedLines">
+            <li>
+               <span class="caret" onclick="manageToggle('dedicated')" href="#">Navettes</span>
+               <ul id="dedicated" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+         <ul id="lignes-local" class="shuttleOrLines">
+            <li>
+               <span class="caret" onclick="manageToggle('shuttleOr')" href="#">Navettes Or</span>
+               <ul id="shuttleOr" class="nested"><a href="#"></a></ul>
+            </li>
+         </ul>
+		 </li>
+      </ul>
+      <br />
+
+      <!-- Onglets: Horaires et Carte -->
+      <div class="onglets">
+         <ul class="ongletsRef">
+            <li class="active"><a href="#onglet1">Horaires</a></li>
+            <li><a href="#onglet2">&nbsp; Carte &nbsp;</a></li>
+            <span id="info-ligne">Veuillez choisir une ligne d'autobus</span>
+         </ul>
+
+         <div class="tab-content">
+
+            <!-- Onglet 1: Horaires -->
+            <div id="onglet1">
+
+               <!-- Tableau Stops -->
+               <div id="stopsContent">
+                  <table id="arrets" class="scroll">
+                     <thead>
+                        <tr>
+                           <th class="column">Arret</th>
+                           <th class="column">Code</th>
+                           <th class="column">Passages</th>
+                           <th class="column">Favoris</th>
+                        </tr>
+                     </thead>
+                     <tbody></tbody>
+                  </table>
+               </div>
+
+               <!-- Tableau Arrivées -->
+               <div id="arrivalsContent">
+                  <table id="arrivals" class="scroll">
+                     <thead>
+                        <tr>
+                           <th id="lastUpdate">Veuillez choisir l'arret d'une ligne d'autobus</th>
+                        </tr>
+                     </thead>
+                     <tbody></tbody>
+                  </table>
+               </div>
+            </div>
+
+            <!-- Onglet 2: Carte -->
+            <div id="onglet2" class="onglet">
+               <div id="carteID" class="carte"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+<!-- Pied de la page (contact) -->
+<footer>
+   <div id="pied">
+      <br />
+      <div class="contact">EQUIPE 01 </div>
+      <br />
+      <div class="contact">Alexandre Laroche, alexandre.laroche.1@ens.etsmtl.ca</div>
+      <div class="contact">Jean-Michel, jean-michel.lafrance.1@ens.etsmtl.ca</div>
+      <div class="contact">Khoi Tran-Quang, hoang-khoi-stephane.tran-quang.1@ens.etsmtl.ca</div>
+      <div class="contact">Paula Sanchez, paula-ximena.sanchez-sabogal.1@ens.etsmtl.ca</div>
+   </div>
+</footer>
+
+</html>

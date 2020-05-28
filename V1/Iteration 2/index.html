@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/lines.json.js"></script>
+	<script src="js/display_more_lines.js"></script>
+	<script src="js/lines_insertion.js"></script>
+	<script src="js/display_lines.js"></script>
+	<script src="js/stops.json.js"></script>
+	<script src="js/arrivals.json.js"></script>
+</head>
+
+<header>
+	<div id="entete">
+		<img id="logo" class="resize_logo" src="images/logo.png" />
+		<img id="banniere" class="resize_banniere" src="images/banniere.png" />
+	</div>
+</header>
+
+<body>
+	<div id="contenu" class="columns">
+		<nav class="menu">
+			<ul id="lignes" class="categories">
+
+				<ul id="lignes-toutes" class="menu-space">
+					<li>
+						<a class="categorie" onclick="toggle('list_all')" href="#">Toutes les lignes</a>
+					</li>
+					<div class="contenu-categorie" id="list_all">
+						<button type="button" class="more">Plus</button>
+						<button type="button" class="less">Moins</button>
+					</div>
+				</ul>
+				<ul id="lignes-local" class="menu-space">
+					<li>
+						<a class="categorie" onclick="toggle('list_local')" href="#">Réseau local</a>
+					</li>
+					<div class="contenu-categorie" id="list_local">
+						<button type="button" class="more">Plus</button>
+						<button type="button" class="less">Moins</button>
+					</div>
+				</ul>
+				<ul id="lignes-nuit" class="menu-space">
+					<li>
+						<a class="categorie" onclick="toggle('list_night')" href="#">Réseau de nuit</a>
+					</li>
+					<div class="contenu-categorie" id="list_night">
+						<button type="button" class="more">Plus</button>
+						<button type="button" class="less">Moins</button>
+					</div>
+				</ul>
+
+				<ul id="lignes-express" class="menu-space">
+					<li>
+						<a class="categorie" onclick="toggle('list_express')" href="#">Réseau express</a>
+					</li>
+					<div class="contenu-categorie" id="list_express">
+						<button type="button" class="more">Plus</button>
+						<button type="button" class="less">Moins</button>
+					</div>
+				</ul>
+				<ul id="lignes-navettes" class="menu-space">
+					<li>
+						<a class="categorie" onclick="toggle('list_navette')" href="#">Navettes</a>
+					</li>
+					<div class="contenu-categorie" id="list_navette">
+						<button type="button" class="more">Plus</button>
+						<button type="button" class="less">Moins</button>
+					</div>
+				</ul>
+				<ul id="lignes-or" class="menu-space">
+					<li>
+						<a class="categorie" onclick="toggle('list_navetteOr')" href="#">Navettes Or</a>
+					</li>
+					<div class="contenu-categorie" id="list_navetteOr">
+						<button type="button" class="more">Plus</button>
+						<button type="button" class="less">Moins</button>
+					</div>
+				</ul>
+			</ul>
+		</nav>
+
+		<div id="contenu-droite">
+			<span id="info-ligne">10-N</span>
+			<table id="arrets" class="scroll">
+				<thead>
+					<tr>
+						<th class="text-left">Arrêt</th>
+						<th class="text-left">Code</th>
+						<th class="text-left">Horaire</th>
+						<th class="text-left">Favoris</th>
+					</tr>
+				</thead>
+				<tbody class="table-hover"></tbody>
+			</table>
+			<span id="arrivals-empty-error">Aucun passage prochainement pour l'arrêt sélectionné</span>
+			<table id="arrivals" class="scroll">
+				<thead>
+					<tr>
+						<th class="text-left">Prochains passages pour l'arrêt <span id="arrival-stop-name">nom-arret</span></th>
+					</tr>
+				</thead>
+				<tbody class="table-hover">
+				</tbody>
+			</table>
+		</div>
+		</div>
+	</div>
+</body>
+
+<footer>
+	<div id="pied">
+		<br/>
+		<div class="row">
+			<div class="column"> > Alexandre Laroche - alexandre.laroche.1@ens.etsmtl.ca</div>
+		</div>
+		<div class="row">
+			<div class="column"> > Jean-Raphael Poulin - jean-raphael.poulin.1@ens.etmsl.ca</div>
+		</div>
+		<div class="row" >
+			<div class="column"> > Thanh-Son-Philippe Lam - thanh-son-philippe.lam.1@etsmtl.net</div>
+		</div>
+		<div class="row" >
+			<div class="column"> > Marc-Antoine Jean - marc-antoine.jean.1@ens.etsmtl.ca</div>
+		</div>			
+		<div class="icon-bar">
+			<div >Gr.01 - Équipe 06</div>
+			<br/>
+			<a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+			<a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+			<a href="#" class="google"><i class="fa fa-google"></i></a> 
+			<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+			<a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+		</div>
+	</div>
+</footer>
+</html>
+
+<script src="js/lines_insertion.js"></script>
+<script src="js/fill_stops.js"></script>
+<script src="js/fill_arrivals.js"></script> 
