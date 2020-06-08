@@ -13,7 +13,6 @@ var favoris;
  * 
  ********************************************/
 window.onload = function () {
-	
   // Recupere les ID des boutons (categories) du menu de gauche
   var all = document.getElementById("all");
   var local = document.getElementById("local");

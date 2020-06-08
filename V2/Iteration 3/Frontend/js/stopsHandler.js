@@ -20,7 +20,6 @@ var StopsHandler = function () {
       } else {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", url);
-
         xhr.onload = function () {
           if (xhr.status >= 200 && xhr.status < 300) {
             const answer = JSON.parse(xhr.response);
@@ -34,7 +33,6 @@ var StopsHandler = function () {
             );
           }
         };
-
         xhr.ontimeout = function () {
           stopError(
             xhr,
@@ -42,7 +40,6 @@ var StopsHandler = function () {
             "Stop STM - Requête expirée après: " + xhr.timeout + " ms"
           );
         };
-
         xhr.onerror = function () {
           if (xhr.readyState == 4) {
             lineError(
@@ -58,11 +55,9 @@ var StopsHandler = function () {
             );
           }
         };
-
         xhr.onabort = function () {
           stopError(xhr, reject, "Stop STM - Requête annulée !");
         };
-
         xhr.timeout = 10000;
         xhr.send();
       }
@@ -74,11 +69,12 @@ var StopsHandler = function () {
    * Recupere de l'API les favori d'un user
    ********************************************/
   function requestFavori() {
+    var url = usrerUrl + "/gti525test/favorite";
 
     return new Promise(function (resolve, reject) {
       // Verifie si la requete est dans la cache
       let xhr = new XMLHttpRequest();
-      xhr.open("GET", userUrl);
+      xhr.open("GET", url);
       xhr.onload = function () {
         if (xhr.status >= 200 && xhr.status < 300) {
           answer = resolve(JSON.parse(xhr.response));
@@ -292,8 +288,7 @@ var StopsHandler = function () {
    ********************************************/
   async function initFavoriStopMarkers() {
     // Liste des markers et contenu du marker
-    var stopMarkers = [],
-      markerContent = [];
+    var stopMarkers = [], markerContent = [];
     const favori = await requestFavori();
     const favoriStop = favori[0].favorite;
     var customBusIcon = L.icon({
@@ -366,7 +361,7 @@ var StopsHandler = function () {
    * CLOSE STOP POPUP
    *
    ********************************************/
-  function closeStopPopup(e) {}
+  //function closeStopPopup(e) {}
 
   return {
     init: function (line) {
@@ -496,7 +491,7 @@ function addFavorite(lineId, lineDirection, stopCode) {
  *********************************************/
 function getFavorite(callBack) {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", userUrl);
+  xhr.open("GET", usrerUrl + "/gti525test/favorite");
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {

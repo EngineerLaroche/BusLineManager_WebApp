@@ -65,7 +65,7 @@ Assurez vous d'avoir le fichier '.env' dans le backend avec des informations sim
 		BACKEND = https://teaching-api.juliengs.ca/gti525
 		DB = mongodb://localhost:27017/labogti350
 		DBNAME = labogti350
-		APIKEY = 01AM30750
+		APIKEY = gti525test
 
 # TROUBLESHOOT
 

@@ -80,8 +80,8 @@ function setMarkers() {
         if (data[0]["favorite"].includes(stops[i].id)) {
           icon = L.icon({
             iconUrl: "images/stop-marker-favorite.png",
-            iconSize: [60, 60], // size of the icon
-            iconAnchor: [30, 60], // anchor of the icon
+            iconSize: [30, 30], // size of the icon
+            iconAnchor: [15, 30], // anchor of the icon
           });
         } else {
           icon = L.icon({
@@ -93,7 +93,7 @@ function setMarkers() {
 
         marker[stopCode] = L.marker(latLng, {
           icon: icon,
-          maxHeight: 30
+          maxHeight: 30,
         })
           .on("popupopen", openPopup)
           .on("popupclose", closePopup)
@@ -130,7 +130,9 @@ function setMarkers() {
         for (var i = firstIndex; i <= lastIndex; i++) {
           favoriteStopsLine.push(stops[i]);
         }
-        L.polyline(favoriteStopsLine, { color: "red" }).addTo(mtl_map);
+        L.polyline(favoriteStopsLine, {
+          color: "red"
+        }).addTo(mtl_map);
       }
     }
   });
@@ -186,8 +188,7 @@ function openPopup(e) {
 
       // Regroupe les heures d'arrivée pour être mis dans le popup
       if (arrivalTimes.length > 0)
-        for (var i = 0; i < 3; i++)
-          tenArrivals += arrivalTimes[i] + ", " ;
+        for (var i = 0; i < 3; i++) tenArrivals += arrivalTimes[i] + ", ";
 
       // Insere le contenu dans le popup
       popup.setContent(content + "&nbsp&nbsp" + tenArrivals);
