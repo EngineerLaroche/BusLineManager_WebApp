@@ -1,8 +1,8 @@
 
-var stopUrl = new URL(`https://teaching-api.juliengs.ca/gti525/STMStops.py?apikey=01AM30750`);
-var arrivalUrl = new URL(`http://teaching-api.juliengs.ca/gti525/STMArrivals.py?apikey=01AM30750`);
-var lineUrl = new URL(`http://teachings-api.juliengs.ca/gti525/STMLines.py?apikey=01AM30750`);
-var busUrl = new URL(`https://teaching-api.juliengs.ca/gti525/STMPositions.py?apikey=01AM30750`);
+var stopUrl = new URL(`https://teaching-api.juliengs.ca/gti525/STMStops.py?apikey=gti525test`);
+var arrivalUrl = new URL(`http://teaching-api.juliengs.ca/gti525/STMArrivals.py?apikey=gti525test`);
+var lineUrl = new URL(`http://teachings-api.juliengs.ca/gti525/STMLines.py?apikey=gti525test`);
+var busUrl = new URL(`https://teaching-api.juliengs.ca/gti525/STMPositions.py?apikey=gti525test`);
 
   /************************************************
    * CONSTRUCT URL 

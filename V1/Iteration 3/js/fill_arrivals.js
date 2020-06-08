@@ -41,7 +41,7 @@ function loadArrivals(stopName, line, direction, stopCode) {
  * 
  ********************************************/
 function fetchArrivals(stopName, line, direction, stopCode) {
-    const url = 'https://teaching-api.juliengs.ca/gti525/STMArrivals.py?apikey=01AM30750&route=' + line + '&direction=' + direction + '&stopCode=' + stopCode;
+    const url = 'https://teaching-api.juliengs.ca/gti525/STMArrivals.py?apikey=gti525test&route=' + line + '&direction=' + direction + '&stopCode=' + stopCode;
     const arrivalsElement = document.getElementById("arrivals");
 
     // Si l'url a déjà été mis en cache
@@ -111,7 +111,7 @@ function showTenNextArrivals(arrivalObjects, stopName) {
     // S'il y a des arrivés de bus de prévu
     if (tenNextArrivals.length > 0) {
         setNoArrivalErrorVisibility(false, arrivalsTable);
-        document.getElementById("arrival-stop-name").innerHTML = stopName;
+        document.getElementById("arrival-stop-name").innerHTML = stopName + " (" + stopId + ")";;
         removeChildren(arrivalsTableBody);
 
         // Boucle qui insère les heures de prochains passages dans le tableau 

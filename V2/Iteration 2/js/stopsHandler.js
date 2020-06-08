@@ -160,9 +160,6 @@ var StopsHandler = function () {
 		})
         .addTo(carte.get());
 		
-	  
-		
-
       markerContent[stopCode].stopInfo = {
         stopName: arrets[i].name,
         stopCode: arrets[i].id,

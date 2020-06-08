@@ -247,13 +247,13 @@ function getFavoriteLink(stop, stopLineNumberDirection, stopCode, stopId) {
  *********************************************/
 function addFavorite(stopCode) {
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://localhost:8000/users/01AM30750/favorite");
+  xhr.open("POST", "http://localhost:8000/users/gti525test/favorite");
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       getFavorite(data => {
         console.log(xhr.responseText);
-        validSnackbar("Mise en favoris des passages réussi. ( " + data[0]["favorite"].length + " / 10 )");
+        validSnackbar("Ajout des passages en favoris réussi. ( " + data[0]["favorite"].length + " / 10 )");
       });
     }
   }
@@ -274,7 +274,7 @@ function addFavorite(stopCode) {
  *********************************************/
 function getFavorite(callBack) {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://localhost:8000/users/01AM30750/favorite");
+  xhr.open("GET", "http://localhost:8000/users/gti525test/favorite");
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -300,7 +300,7 @@ function getFavorite(callBack) {
  *********************************************/
 function removeFavorite(stopCode) {
   var xhr = new XMLHttpRequest();
-  xhr.open("DELETE", "http://localhost:8000/users/01AM30750/favorite");
+  xhr.open("DELETE", "http://localhost:8000/users/gti525test/favorite");
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -350,8 +350,8 @@ function setFavoriteDictionary(stop, stopId, numberAndDirection, id) {
  * 
  ********************************************/
 function setFavoriteStyle(button) {
-  button.style.color = 'white';
-  button.style.backgroundColor = "rgb(" + 0 + "," + 159 + "," + 227 + ")";
+  button.style.color = 'gray';
+  button.style.backgroundColor = "rgb(165, 255, 147)";
 }
 
 /********************************************

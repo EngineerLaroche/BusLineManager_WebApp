@@ -7,7 +7,7 @@
  * 
  ********************************************/
 function loadLines(success, error) {
-  const url = 'https://teaching-api.juliengs.ca/gti525/STMLines.py?apikey=01AM30750';
+  const url = 'https://teaching-api.juliengs.ca/gti525/STMLines.py?apikey=gti525test';
    
   // Si l'url a déjà été mis en cache
   if (cache.contains(url)) {

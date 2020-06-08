@@ -15,7 +15,7 @@ var markerDirection = null;
  * 
  ********************************************/
 function loadStops(line, direction) {
-  const url = 'https://teaching-api.juliengs.ca/gti525/STMStops.py?apikey=01AM30750&route=' + line + '&direction=' + direction;
+  const url = 'https://teaching-api.juliengs.ca/gti525/STMStops.py?apikey=gti525test&route=' + line + '&direction=' + direction;
   const tabsElement = document.getElementsByClassName("tabs")[0];
   const stopsElement = document.getElementById("arrets");
 

@@ -74,12 +74,11 @@ var StopsHandler = function () {
    * Recupere de l'API les favori d'un user
    ********************************************/
   function requestFavori() {
-    var url = usrerUrl + "/01AM30750/favorite";
 
     return new Promise(function (resolve, reject) {
       // Verifie si la requete est dans la cache
       let xhr = new XMLHttpRequest();
-      xhr.open("GET", url);
+      xhr.open("GET", userUrl);
       xhr.onload = function () {
         if (xhr.status >= 200 && xhr.status < 300) {
           answer = resolve(JSON.parse(xhr.response));
@@ -472,7 +471,7 @@ function makeFavorite(
  *********************************************/
 function addFavorite(lineId, lineDirection, stopCode) {
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://localhost:8000/users/01AM30750/favorite");
+  xhr.open("POST", "http://localhost:8000/users/gti525test/favorite");
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -497,7 +496,7 @@ function addFavorite(lineId, lineDirection, stopCode) {
  *********************************************/
 function getFavorite(callBack) {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", usrerUrl + "/01AM30750/favorite");
+  xhr.open("GET", userUrl);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -519,7 +518,7 @@ function getFavorite(callBack) {
  *********************************************/
 function removeFavorite(lineId, lineDirection, stopCode) {
   var xhr = new XMLHttpRequest();
-  xhr.open("DELETE", "http://localhost:8000/users/01AM30750/favorite");
+  xhr.open("DELETE", "http://localhost:8000/users/gti525test/favorite");
   xhr.setRequestHeader("Content-Type", "application/json");
 
   xhr.onreadystatechange = function () {

@@ -36,6 +36,7 @@ function fillStopInfo(lineNumber, directionLetter) {
 
       const stopLinkTd = document.createElement("td");
       stopLinkTd.className = "text-left";
+    
       const stopLink = document.createElement("button");
       stopLink.textContent = "Prochains passages";
       stopLink.onclick = function () {

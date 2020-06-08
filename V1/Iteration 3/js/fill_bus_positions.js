@@ -9,7 +9,7 @@
  *
  ********************************************/
 function fetchBusPositions(line, direction, cancellationToken) {
-  const url = `https://teaching-api.juliengs.ca/gti525/STMPositions.py?apikey=01AM30750&route=${line}&direction=${direction}`;
+  const url = `https://teaching-api.juliengs.ca/gti525/STMPositions.py?apikey=gti525test&route=${line}&direction=${direction}`;
   return new Promise(function(resolve, reject) {
     let xhr = new XMLHttpRequest();
     cancellationToken.cancel = function() {

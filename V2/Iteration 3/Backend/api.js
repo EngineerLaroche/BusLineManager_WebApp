@@ -1,4 +1,4 @@
-// On peut optimiser ?
+
 const request = require('request');
 
  /********************************************

@@ -10,16 +10,9 @@
  /* Style the header */
  header {
   width: 1000px;
-  padding: 10px;
   font-size: 35px;
   text-align: center; 
   background-color: #009fe3;
-}
-
-.map-favorite {
-  width:200px;
-  margin-left:40px;
-  margin-top:10px;
 }
 
 /* Resize header logo */
@@ -82,10 +75,16 @@ div.columns:after {
    background: #84d0f5;
    float: left;
    width: 250px;
-   height: 600px; 
+   height: 500px; 
    padding: 10px;
    overflow-y: auto;
  }
+
+  /* Space between categories in Menu*/
+  div.spaceMenu {
+    list-style-type: none;
+    border-bottom: 15px solid #84d0f5;
+  }
 
  /* Style the list of catregories (buttons) inside the menu */
  ul.categories {
@@ -96,12 +95,12 @@ div.columns:after {
 
  /* Style Color of the menu sub-categories */
  .categories .active {
-  background-color: #85919c;
+  background-color: #656e77;
 }
 
 /* Style Color brillance */
 .categories > ul:hover {
-  background-color: #85919c;
+  background-color: #656e77;
 }
 
 /* Style of content in the menu sub-categories */
@@ -113,7 +112,7 @@ div.columns:after {
 }
 
 .categories ul:active { 
-  background-color: #85919c;
+  background-color: #656e77;
 }
 
 /* To let the ontent of the sub-categories take all the space */
@@ -133,7 +132,7 @@ div.columns:after {
 
 /* To add one "-" per row of content */
 .contenu-categorie li::before {
-  content: " > ";
+  content: " ";
 }
 
 /* To add a small line between every part of content in the sub-categories */
@@ -149,7 +148,7 @@ ul.menu-space {
 
 /* Style between buttons */
 nav li {
-  border-bottom: 15px solid #84d0f5;
+  border-bottom: 5px solid #84d0f5;
   list-style-type: none;
   padding: 5px;
 }
@@ -172,7 +171,7 @@ ul li:nth-child(n+7) {
 button{
   width:50%;
   cursor: pointer;
-  color: #009fe3;
+  color: #656e77;
   margin-bottom: 10px;
   float: left;
 }
@@ -252,6 +251,7 @@ button{
   float: right;
   font-weight: bold;
   font-size: 20px;
+  margin-right: 20px;
 }
 
 /* Style Onglets actifs (sélectionnés) */
@@ -278,19 +278,39 @@ li.active a, li.active a:hover {
  *     HORAIRE / FAVORIS - TABLE     *
  *************************************/
 
+/* Contenu du stop */
+#stopsContent {
+  height: 200px;        
+  width: 700px;                          
+  overflow-y: auto;     
+  border: 2px solid #9ea7af;
+}
+
+ /* Refresh time of arrivals */
+ #refresh-time{
+  float:right;
+  margin-right: 20px;
+}
+
+/* Contenu des arrivees */
+#arrivalsContent {
+  height: 170px;     
+  width: 700px;                 
+  overflow-y: auto;     
+  border: 2px solid #9ea7af;
+}
+
  /* Right content (box floating) */
  #contenu-droite, 
  #favoris-contenu-droite{
   width: 750px;
-  height: 520px;
-  overflow-y: auto;
-  visibility: hidden;
+  height: 400px;
 }
 
 #contenu-droite > *, 
 #favoris-contenu-droite > * {
-  margin-left: 50px;
-  margin-top: 20px;
+  margin-left: 40px;
+  margin-top: 5px;
 }
 
 /* Content (text-address) over the Table */
@@ -303,7 +323,6 @@ li.active a, li.active a:hover {
 /* Style of the table  */
 table {
   height: 100px;
-  max-width: 600px;
   width: 100%;
   border: 2px solid #9ea7af;
   border-collapse: collapse;
@@ -354,7 +373,7 @@ tr:nth-child(odd):hover td {
 
 /* Style of rows and seperators in the table  */
 td {
-  padding:10px;
+  padding:2px;
   text-align:left;
   font-weight:300;
   font-size:14px;
@@ -464,8 +483,14 @@ td {
 
  .map { 
   width: 710px;
-  height: 520px;
+  height: 400px;
   margin-left: 40px;
+}
+
+.map-favorite {
+  width:200px;
+  margin-left:40px;
+  margin-top:10px;
 }
 
 /*************************** 
@@ -476,7 +501,7 @@ td {
  footer {
   background-color: #009fe3;
   width: 1000px;
-  height: 130px;
+  height: 100px;
   padding: 10px;
   text-align: center;
   color: white;

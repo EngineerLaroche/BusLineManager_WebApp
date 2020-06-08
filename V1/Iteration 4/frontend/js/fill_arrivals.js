@@ -14,7 +14,7 @@ var firstMarkerClick = true;
  * Fonction qui permet de charger les passages 
  * à partir de la cache ou du serveur selon
  * l'arrêt choisi par l'utilisateur. Met à
- * jour les données à tous les 10 secondes.
+ * jour les données à tous les 5 secondes.
  * 
  ********************************************/
 function loadArrivals(stopName, line, direction, stopCode) {
@@ -24,10 +24,10 @@ function loadArrivals(stopName, line, direction, stopCode) {
     // Recupere les arrivees de bus de l'API 
     fetchArrivals(stopName, line, direction, stopCode);
 
-    // Met a jour les arrivees de bus a tous les 10 secondes
+    // Met a jour les arrivees de bus a tous les 5 secondes
     arrivalsInterval = setInterval(function () {
         fetchArrivals(stopName, line, direction, stopCode);
-    }, 10000);
+    }, 5000);
 }
 
 /********************************************
